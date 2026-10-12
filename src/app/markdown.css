@@ -1,0 +1,265 @@
+@import "katex/dist/katex.min.css";
+
+/* Rendered Markdown: generated HTML, styled after GitHub's markdown-body */
+@layer components {
+    .markdown {
+        @apply text-base leading-[1.7] break-words;
+
+        & > :first-child {
+            margin-top: 0;
+        }
+        & > :last-child {
+            margin-bottom: 0;
+        }
+
+        & :is(p, blockquote, ul, ol, dl, table, pre, details, figure, .katex-display) {
+            margin-block: 0 1rem;
+        }
+
+        & :is(h1, h2, h3, h4, h5, h6) {
+            @apply font-semibold tracking-tight;
+            margin-block: 1.75rem 1rem;
+            line-height: 1.25;
+        }
+        & h1 {
+            @apply border-b pb-[0.3em] text-[2em];
+        }
+        & h2 {
+            @apply border-b pb-[0.3em] text-[1.5em];
+        }
+        & h3 {
+            font-size: 1.25em;
+        }
+        & h5 {
+            font-size: 0.875em;
+        }
+        & h6 {
+            @apply text-muted-foreground;
+            font-size: 0.85em;
+        }
+
+        & a:not([data-marker]) {
+            @apply underline decoration-brand/60 underline-offset-4 transition-colors hover:decoration-brand;
+        }
+
+        & strong {
+            @apply font-semibold;
+        }
+
+        & :is(ul, ol) {
+            padding-left: 2em;
+        }
+        & ul {
+            list-style: disc;
+        }
+        & ol {
+            list-style: decimal;
+        }
+        & :is(ul, ol) :is(ul, ol) {
+            margin-bottom: 0;
+        }
+        & ul ul {
+            list-style: circle;
+        }
+        & ul ul ul {
+            list-style: square;
+        }
+        & li + li,
+        & li > :is(ul, ol) {
+            margin-top: 0.25em;
+        }
+        & li > p {
+            margin-top: 1rem;
+        }
+
+        & .contains-task-list {
+            list-style: none;
+            padding-left: 1.6em;
+        }
+        & .task-list-item input {
+            @apply accent-primary;
+            margin: 0 0.35em 0.2em -1.5em;
+            vertical-align: middle;
+        }
+
+        & blockquote {
+            @apply border-l-[0.25em] px-[1em] text-muted-foreground;
+        }
+
+        & code {
+            @apply rounded-[5px] bg-muted px-[0.4em] py-[0.15em] font-mono text-[0.85em];
+        }
+        & pre code {
+            @apply bg-transparent p-0 text-[0.875rem] leading-relaxed;
+        }
+
+        & table {
+            @apply block w-max max-w-full overflow-auto border-collapse;
+        }
+        & :is(th, td) {
+            @apply border px-[0.8em] py-[0.4em];
+        }
+        & th {
+            @apply bg-muted font-semibold;
+        }
+        & tbody tr:nth-child(2n) {
+            @apply bg-muted/40;
+        }
+
+        & img {
+            display: inline;
+            max-width: 100%;
+            vertical-align: middle;
+        }
+        & img[align="right"] {
+            float: right;
+            padding-left: 1.25em;
+        }
+        & img[align="left"] {
+            float: left;
+            padding-right: 1.25em;
+        }
+
+        & hr {
+            @apply my-6 h-[0.25em] border-0 bg-border;
+        }
+
+        & mark {
+            @apply rounded-[3px] px-[0.15em] text-inherit;
+            background: var(--mark);
+        }
+        & ins {
+            @apply rounded-[3px] no-underline;
+            color: var(--syntax-addition);
+            background: var(--syntax-addition-bg);
+        }
+        & del {
+            @apply rounded-[3px];
+            color: var(--syntax-deletion);
+            background: var(--syntax-deletion-bg);
+        }
+
+        & kbd {
+            @apply inline-block rounded-[5px] border border-b-2 bg-card px-[0.4em] font-mono text-[0.8em] leading-[1.6] text-foreground;
+        }
+
+        & details:not([data-alert]) > summary {
+            @apply cursor-pointer font-medium;
+        }
+
+        & dt {
+            @apply font-semibold;
+        }
+        & dd {
+            @apply mb-4 pl-4;
+        }
+
+        & .tag {
+            @apply rounded-full border border-brand/30 px-[0.5em] py-[0.1em] text-[0.85em] font-medium text-brand;
+        }
+
+        & a[data-unresolved] {
+            @apply cursor-help decoration-dotted decoration-muted-foreground;
+        }
+
+        & [tabindex="-1"]:focus {
+            outline: none;
+        }
+
+        & :is(table, .katex-display):focus-visible {
+            @apply outline-2 outline-offset-2 outline-ring;
+        }
+
+        & .toc ul {
+            @apply list-none pl-4;
+        }
+        & .toc > ul {
+            @apply mb-4 pl-0;
+        }
+
+        & .katex-display {
+            @apply overflow-x-auto overflow-y-hidden py-1;
+        }
+
+        & .footnotes {
+            @apply mt-10 border-t pt-4 text-sm text-muted-foreground;
+        }
+        & [data-footnote-ref] {
+            @apply no-underline;
+        }
+
+        & img[src$="#gh-dark-mode-only"] {
+            display: none;
+        }
+        &:is(.dark *) img[src$="#gh-dark-mode-only"] {
+            display: inline;
+        }
+        &:is(.dark *) img[src$="#gh-light-mode-only"] {
+            display: none;
+        }
+    }
+
+    /* highlight.js classes mapped onto the GitHub light and dark syntax tokens */
+    .hljs-doctag,
+    .hljs-keyword,
+    .hljs-template-tag,
+    .hljs-template-variable,
+    .hljs-type,
+    .hljs-variable.language_ {
+        color: var(--syntax-keyword);
+    }
+    .hljs-title,
+    .hljs-title.class_,
+    .hljs-title.function_ {
+        color: var(--syntax-entity);
+    }
+    .hljs-attr,
+    .hljs-attribute,
+    .hljs-literal,
+    .hljs-meta,
+    .hljs-number,
+    .hljs-operator,
+    .hljs-variable,
+    .hljs-selector-attr,
+    .hljs-selector-class,
+    .hljs-selector-id,
+    .hljs-section {
+        color: var(--syntax-constant);
+    }
+    .hljs-regexp,
+    .hljs-string,
+    .hljs-meta .hljs-string {
+        color: var(--syntax-string);
+    }
+    .hljs-built_in,
+    .hljs-symbol,
+    .hljs-bullet {
+        color: var(--syntax-builtin);
+    }
+    .hljs-comment,
+    .hljs-code,
+    .hljs-formula {
+        color: var(--syntax-comment);
+    }
+    .hljs-name,
+    .hljs-quote,
+    .hljs-selector-tag,
+    .hljs-selector-pseudo {
+        color: var(--syntax-tag);
+    }
+    .hljs-section,
+    .hljs-strong {
+        font-weight: 600;
+    }
+    .hljs-emphasis {
+        font-style: italic;
+    }
+    .hljs-addition {
+        color: var(--syntax-addition);
+        background: var(--syntax-addition-bg);
+    }
+    .hljs-deletion {
+        color: var(--syntax-deletion);
+        background: var(--syntax-deletion-bg);
+    }
+}

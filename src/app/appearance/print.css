@@ -1,0 +1,26 @@
+/* Print on the light palette, on pure white paper, with a bit more contrast for muted text, accents and rules */
+@media print {
+    :root {
+        --background: oklch(1 0 0);
+        --muted-foreground: oklch(0.45 0 0);
+        --border: oklch(0.87 0 0);
+        --brand: oklch(0.5 0.17 274);
+    }
+
+    .dark .markdown img[src$="#gh-dark-mode-only"] {
+        display: none;
+    }
+
+    .dark .markdown img[src$="#gh-light-mode-only"] {
+        display: inline;
+    }
+
+    .markdown pre,
+    .markdown table,
+    .markdown .katex-display,
+    .markdown div:has(> pre) {
+        overflow: visible;
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+    }
+}

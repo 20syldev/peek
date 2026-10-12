@@ -1,0 +1,42 @@
+/* Paper is white: print never takes the dark palette, it keeps the light one */
+@media not print {
+    .dark {
+        --background: oklch(0.145 0 0);
+        --foreground: oklch(0.985 0 0);
+        --card: oklch(0.185 0 0);
+        --card-foreground: oklch(0.985 0 0);
+        --popover: oklch(0.205 0 0);
+        --popover-foreground: oklch(0.985 0 0);
+        --primary: oklch(0.922 0 0);
+        --primary-foreground: oklch(0.205 0 0);
+        --secondary: oklch(0.269 0 0);
+        --secondary-foreground: oklch(0.985 0 0);
+        --muted: oklch(0.235 0 0);
+        --muted-foreground: oklch(0.708 0 0);
+        --accent: oklch(0.269 0 0);
+        --accent-foreground: oklch(0.985 0 0);
+        --destructive: oklch(0.704 0.191 22.216);
+        --border: oklch(1 0 0 / 10%);
+        --input: oklch(1 0 0 / 18%);
+        --ring: oklch(0.72 0.13 274);
+        --brand: oklch(0.74 0.13 274);
+        --dot: oklch(1 0 0 / 7%);
+        --mark: oklch(0.45 0.09 95);
+        --alert-note: #4493f8;
+        --alert-tip: #3fb950;
+        --alert-important: #ab7df8;
+        --alert-warning: #d29922;
+        --alert-caution: #f85149;
+        --syntax-keyword: #ff7b72;
+        --syntax-entity: #d2a8ff;
+        --syntax-constant: #79c0ff;
+        --syntax-string: #a5d6ff;
+        --syntax-builtin: #ffa657;
+        --syntax-comment: #8b949e;
+        --syntax-tag: #7ee787;
+        --syntax-addition: #aff5b4;
+        --syntax-addition-bg: #033a16;
+        --syntax-deletion: #ffdcd7;
+        --syntax-deletion-bg: #67060c;
+    }
+}

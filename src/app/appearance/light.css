@@ -1,0 +1,41 @@
+/* Neutral shadcn palette with a single indigo accent, the --brand token */
+:root {
+    --radius: 0.625rem;
+    --background: oklch(0.985 0 0);
+    --foreground: oklch(0.145 0 0);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.145 0 0);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.145 0 0);
+    --primary: oklch(0.205 0 0);
+    --primary-foreground: oklch(0.985 0 0);
+    --secondary: oklch(0.965 0 0);
+    --secondary-foreground: oklch(0.205 0 0);
+    --muted: oklch(0.965 0 0);
+    --muted-foreground: oklch(0.52 0 0);
+    --accent: oklch(0.955 0 0);
+    --accent-foreground: oklch(0.205 0 0);
+    --destructive: oklch(0.577 0.245 27.325);
+    --border: oklch(0.91 0 0);
+    --input: oklch(0.87 0 0);
+    --ring: oklch(0.585 0.17 274);
+    --brand: oklch(0.555 0.17 274);
+    --dot: oklch(0.145 0 0 / 9%);
+    --mark: oklch(0.94 0.1 95);
+    --alert-note: #0969da;
+    --alert-tip: #1a7f37;
+    --alert-important: #8250df;
+    --alert-warning: #9a6700;
+    --alert-caution: #d1242f;
+    --syntax-keyword: #cf222e;
+    --syntax-entity: #8250df;
+    --syntax-constant: #0550ae;
+    --syntax-string: #0a3069;
+    --syntax-builtin: #953800;
+    --syntax-comment: #59636e;
+    --syntax-tag: #116329;
+    --syntax-addition: #116329;
+    --syntax-addition-bg: #dafbe1;
+    --syntax-deletion: #82071e;
+    --syntax-deletion-bg: #ffebe9;
+}
