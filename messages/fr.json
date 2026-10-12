@@ -1,0 +1,145 @@
+{
+    "meta": {
+        "title": "Peek - Visionneuse Markdown",
+        "description": "Jetez un œil à n'importe quel README dans le navigateur : fichier local, lien GitHub ou texte collé, rendu GitHub, GitLab, Obsidian ou CommonMark."
+    },
+    "notFound": {
+        "title": "Page non trouvée",
+        "description": "La page que vous recherchez n'existe pas ou a été déplacée.",
+        "back": "Retour à l'accueil"
+    },
+    "error": {
+        "title": "Ce document n'a pas pu être affiché",
+        "description": "Son contenu a provoqué une erreur inattendue. Vous pouvez réessayer ou revenir à l'accueil.",
+        "retry": "Réessayer",
+        "home": "Retour à l'accueil"
+    },
+    "markdown": {
+        "alerts": {
+            "note": "Remarque",
+            "tip": "Astuce",
+            "important": "Important",
+            "warning": "Avertissement",
+            "caution": "Attention"
+        },
+        "footnotes": "Notes",
+        "footnoteBack": "Retour à la référence {index}",
+        "footnoteBackText": "retour",
+        "toc": "Table des matières",
+        "relativeLink": "Lien relatif : il ne fonctionne que pour un document ouvert depuis un lien.",
+        "copyCode": "Copier le code",
+        "codeCopied": "Code copié",
+        "copyFailed": "Copie impossible",
+        "diagramSource": "Source du diagramme",
+        "diagramError": "Ce diagramme Mermaid contient une erreur.",
+        "alertPrefix": "{label} : "
+    },
+    "errors": {
+        "title": "Ce document n'a pas pu être affiché",
+        "cannotDisplay": "Impossible d'afficher ce fichier",
+        "emptyLink": "Saisissez un lien.",
+        "invalidLink": "Ce lien n'est pas valide.",
+        "badProtocol": "Seuls les liens http et https sont acceptés.",
+        "notRepository": "Ce lien GitHub ne désigne pas un dépôt.",
+        "notFile": "Ce lien GitHub ne désigne pas un fichier.",
+        "rawIncomplete": "Ce lien brut GitHub est incomplet.",
+        "gistIncomplete": "Ce lien de gist est incomplet.",
+        "tooLarge": "Ce fichier dépasse 5 Mo.",
+        "notText": "Ce fichier n'est pas un fichier texte.",
+        "notMarkdown": "Ce fichier n'est pas un fichier Markdown ou texte.",
+        "unreachable": "Impossible de lire ce lien. Le site est injoignable ou refuse la lecture depuis un autre domaine (CORS).",
+        "notFound": "Fichier introuvable (404). Vérifiez le lien et que le dépôt est public.",
+        "serverStatus": "Le serveur a répondu {status}.",
+        "webPage": "Ce lien renvoie une page web, pas un fichier Markdown.",
+        "unexpected": "Une erreur inattendue est survenue pendant le chargement."
+    },
+    "pastedText": "Texte collé",
+    "home": {
+        "title": "Affichez votre README, rendu comme à la source.",
+        "subtitle": "Un fichier local, un lien vers un dépôt ou du texte collé, au format GitHub, GitLab, Obsidian ou CommonMark.",
+        "linkLabel": "Lien du fichier",
+        "linkPlaceholder": "github.com/utilisateur/depot",
+        "load": "Charger",
+        "markdownLabel": "Contenu Markdown",
+        "markdownPlaceholder": "# Mon projet",
+        "cancel": "Annuler",
+        "show": "Afficher",
+        "paste": "Coller du Markdown"
+    },
+    "dropzone": {
+        "release": "Relâchez pour afficher le fichier",
+        "drop": "Déposez un fichier <code>.md</code> ici",
+        "browse": "ou parcourez vos fichiers",
+        "replace": "Relâchez pour remplacer le document"
+    },
+    "reader": {
+        "loading": "Chargement du document",
+        "loadingShort": "Chargement",
+        "announce": "Chargement du document.",
+        "announceRendered": "Document {name} affiché.",
+        "linkCopied": "Lien copié",
+        "copyFailed": "Copie impossible",
+        "copyLink": "Copier le lien",
+        "shareLink": "Copier le lien de partage",
+        "source": "Source",
+        "openOrigin": "Ouvrir la page d'origine",
+        "close": "Fermer le document",
+        "outline": "Sommaire",
+        "outlineRail": "Sommaire du document",
+        "flavor": "Format Markdown",
+        "dismiss": "Masquer le message",
+        "timeout": "Ce document est trop lourd ou trop complexe pour être affiché.",
+        "unsupported": "Ce document ne peut pas être affiché dans ce format. Essayez-en un autre.",
+        "empty": "Ce document est vide.",
+        "raw": "Markdown brut",
+        "rawLabel": "Source Markdown"
+    },
+    "flavors": {
+        "github": "Alertes, formules, Mermaid, emojis",
+        "gitlab": "Sommaire [[_TOC_]], citations >>>, diff en ligne",
+        "obsidian": "Callouts, liens wiki, ==surlignage==, #tags",
+        "commonmark": "La norme seule, sans extension"
+    },
+    "settings": {
+        "label": "Réglages",
+        "theme": {
+            "label": "Thème",
+            "light": "Thème clair",
+            "dark": "Thème sombre",
+            "system": "Thème du système"
+        },
+        "language": "Langue",
+        "shortcuts": "Raccourcis clavier",
+        "source": "Code source sur GitHub"
+    },
+    "keys": {
+        "Escape": "Échap",
+        "Enter": "Entrée",
+        "or": "ou"
+    },
+    "shortcuts": {
+        "file": "raccourcis.md",
+        "title": "Raccourcis clavier",
+        "singleKeys": "Raccourcis à une touche",
+        "singleKeysHint": "Actives hors des champs de saisie. À couper avec une saisie vocale ou un contacteur.",
+        "scopes": {
+            "global": "Partout",
+            "home": "Accueil",
+            "document": "Document"
+        },
+        "items": {
+            "help": "Afficher les raccourcis",
+            "theme": "Basculer entre clair et sombre",
+            "locale": "Changer de langue",
+            "open": "Ouvrir un fichier",
+            "paste": "Coller un lien, un fichier ou du Markdown",
+            "focusUrl": "Saisir un lien",
+            "submitText": "Afficher le texte saisi",
+            "outline": "Afficher le sommaire",
+            "copyLink": "Copier le lien de partage",
+            "close": "Fermer le document",
+            "print": "Imprimer ou exporter en PDF",
+            "raw": "Afficher le Markdown brut"
+        }
+    }
+}

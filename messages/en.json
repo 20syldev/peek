@@ -1,0 +1,145 @@
+{
+    "meta": {
+        "title": "Peek - Markdown viewer",
+        "description": "Peek at any README in the browser: a local file, a GitHub link or pasted text, rendered as GitHub, GitLab, Obsidian or CommonMark."
+    },
+    "notFound": {
+        "title": "Page not found",
+        "description": "The page you are looking for does not exist or has been moved.",
+        "back": "Back to home"
+    },
+    "error": {
+        "title": "This document could not be displayed",
+        "description": "Its content caused an unexpected error. You can try again or go back to the home page.",
+        "retry": "Try again",
+        "home": "Back to home"
+    },
+    "markdown": {
+        "alerts": {
+            "note": "Note",
+            "tip": "Tip",
+            "important": "Important",
+            "warning": "Warning",
+            "caution": "Caution"
+        },
+        "footnotes": "Footnotes",
+        "footnoteBack": "Back to reference {index}",
+        "footnoteBackText": "back",
+        "toc": "Table of contents",
+        "relativeLink": "Relative link: it only works for a document opened from a link.",
+        "copyCode": "Copy the code",
+        "codeCopied": "Code copied",
+        "copyFailed": "Copy failed",
+        "diagramSource": "Diagram source",
+        "diagramError": "This Mermaid diagram contains an error.",
+        "alertPrefix": "{label}: "
+    },
+    "errors": {
+        "title": "This document could not be displayed",
+        "cannotDisplay": "Unable to display this file",
+        "emptyLink": "Enter a link.",
+        "invalidLink": "This link is not valid.",
+        "badProtocol": "Only http and https links are accepted.",
+        "notRepository": "This GitHub link does not point to a repository.",
+        "notFile": "This GitHub link does not point to a file.",
+        "rawIncomplete": "This raw GitHub link is incomplete.",
+        "gistIncomplete": "This gist link is incomplete.",
+        "tooLarge": "This file is larger than 5 MB.",
+        "notText": "This file is not a text file.",
+        "notMarkdown": "This file is not a Markdown or text file.",
+        "unreachable": "Unable to read this link. The site is unreachable or refuses to be read from another domain (CORS).",
+        "notFound": "File not found (404). Check the link and that the repository is public.",
+        "serverStatus": "The server answered {status}.",
+        "webPage": "This link returns a web page, not a Markdown file.",
+        "unexpected": "An unexpected error occurred while loading."
+    },
+    "pastedText": "Pasted text",
+    "home": {
+        "title": "Display your README, rendered as at the source.",
+        "subtitle": "A local file, a link to a repository or pasted text, in GitHub, GitLab, Obsidian or CommonMark format.",
+        "linkLabel": "File link",
+        "linkPlaceholder": "github.com/user/repo",
+        "load": "Load",
+        "markdownLabel": "Markdown content",
+        "markdownPlaceholder": "# My project",
+        "cancel": "Cancel",
+        "show": "Display",
+        "paste": "Paste Markdown"
+    },
+    "dropzone": {
+        "release": "Release to display the file",
+        "drop": "Drop a <code>.md</code> file here",
+        "browse": "or browse your files",
+        "replace": "Release to replace the document"
+    },
+    "reader": {
+        "loading": "Loading the document",
+        "loadingShort": "Loading",
+        "announce": "Loading the document.",
+        "announceRendered": "Document {name} displayed.",
+        "linkCopied": "Link copied",
+        "copyFailed": "Copy failed",
+        "copyLink": "Copy link",
+        "shareLink": "Copy the share link",
+        "source": "Source",
+        "openOrigin": "Open the original page",
+        "close": "Close the document",
+        "outline": "Outline",
+        "outlineRail": "Document outline",
+        "flavor": "Markdown format",
+        "dismiss": "Dismiss the message",
+        "timeout": "This document is too large or too complex to be displayed.",
+        "unsupported": "This document cannot be displayed in this format. Try another one.",
+        "empty": "This document is empty.",
+        "raw": "Raw Markdown",
+        "rawLabel": "Markdown source"
+    },
+    "flavors": {
+        "github": "Alerts, formulas, Mermaid, emojis",
+        "gitlab": "[[_TOC_]] contents, >>> quotes, inline diff",
+        "obsidian": "Callouts, wiki links, ==highlight==, #tags",
+        "commonmark": "The standard alone, no extensions"
+    },
+    "settings": {
+        "label": "Settings",
+        "theme": {
+            "label": "Theme",
+            "light": "Light theme",
+            "dark": "Dark theme",
+            "system": "System theme"
+        },
+        "language": "Language",
+        "shortcuts": "Keyboard shortcuts",
+        "source": "Source code on GitHub"
+    },
+    "keys": {
+        "Escape": "Esc",
+        "Enter": "Enter",
+        "or": "or"
+    },
+    "shortcuts": {
+        "file": "shortcuts.md",
+        "title": "Keyboard shortcuts",
+        "singleKeys": "Single-key shortcuts",
+        "singleKeysHint": "Active outside text fields. Turn them off with voice input or a switch device.",
+        "scopes": {
+            "global": "Everywhere",
+            "home": "Home",
+            "document": "Document"
+        },
+        "items": {
+            "help": "Show the shortcuts",
+            "theme": "Switch between light and dark",
+            "locale": "Switch language",
+            "open": "Open a file",
+            "paste": "Paste a link, a file or Markdown",
+            "focusUrl": "Enter a link",
+            "submitText": "Display the typed text",
+            "outline": "Show the outline",
+            "copyLink": "Copy the share link",
+            "close": "Close the document",
+            "print": "Print or export to PDF",
+            "raw": "Show the raw Markdown"
+        }
+    }
+}
