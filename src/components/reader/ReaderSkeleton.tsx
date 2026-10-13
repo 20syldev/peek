@@ -20,10 +20,10 @@ export function ReaderSkeleton({ name }: ReaderSkeletonProps) {
         <main
             aria-busy="true"
             aria-label={t("loading")}
-            className="mx-auto flex w-full max-w-[70rem] flex-1 px-3 pt-3 pb-12 sm:px-6 sm:pt-16"
+            className="mx-auto flex w-full max-w-[70rem] flex-1 px-3 pt-3 pb-12 sm:px-6 md:pt-16"
         >
             <div className="min-w-0 flex-1">
-                <div aria-hidden="true" className="mb-2 h-10 sm:hidden" />
+                <div aria-hidden="true" className="mb-2 h-10 md:hidden" />
                 <div className="relative top-px inline-flex items-center gap-2 rounded-t-[10px] border border-b-0 bg-card px-4 pt-2.5 pb-[11px] font-mono text-[13px] font-medium">
                     <FileText aria-hidden="true" className="size-[15px] text-brand" />
                     {name ?? t("loadingShort")}

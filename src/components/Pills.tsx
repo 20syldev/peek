@@ -24,7 +24,8 @@ export interface PillsProps<T extends string> {
 /**
  * Segmented pill for a single choice among a few options, on the Radix toggle
  * group (radios, arrow keys, one Tab stop); selection is styled from
- * aria-checked since a tooltip trigger overwrites data-state.
+ * aria-checked since a tooltip trigger overwrites data-state, and from
+ * data-state for the pills that have no tooltip.
  */
 export function Pills<T extends string>({
     label,
@@ -51,7 +52,7 @@ export function Pills<T extends string>({
                         value={option}
                         aria-label={optionLabel}
                         className={cn(
-                            "h-7 min-w-7 rounded-full text-xs text-muted-foreground hover:bg-transparent hover:text-foreground aria-checked:hover:text-background aria-checked:bg-foreground aria-checked:text-background [&_svg:not([class*='size-'])]:size-3.5",
+                            "h-7 min-w-7 rounded-full text-xs text-muted-foreground hover:bg-transparent hover:text-foreground aria-checked:hover:text-background aria-checked:bg-foreground aria-checked:text-background data-[state=on]:bg-foreground data-[state=on]:text-background data-[state=on]:hover:bg-foreground data-[state=on]:hover:text-background [&_svg:not([class*='size-'])]:size-3.5",
                             Icon ? "px-0" : "px-2.5 font-mono max-sm:px-1.5",
                         )}
                     >
