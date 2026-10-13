@@ -17,6 +17,7 @@ import { expandQuoteFences, remarkInlineDiff } from "@/lib/markdown/gitlab";
 import { rehypeHeadingIds } from "@/lib/markdown/headings";
 import { rehypeMath } from "@/lib/markdown/katex";
 import type { RenderLabels } from "@/lib/markdown/labels";
+import { rehypeLines } from "@/lib/markdown/lines";
 import { remarkMathBackticks } from "@/lib/markdown/math";
 import { rehypeMermaid } from "@/lib/markdown/mermaid";
 import { remarkObsidian, stripComments } from "@/lib/markdown/obsidian";
@@ -113,7 +114,7 @@ function rehypePlugins(
         [rehypeUrls, { source, unresolved: labels.relativeLink }],
     ];
     const highlight: PluggableList = [rehypeHighlight];
-    if (flavor === "commonmark") return [...safe, ...highlight];
+    if (flavor === "commonmark") return [...safe, ...highlight, rehypeLines];
 
     const rich: PluggableList = [
         ...safe,
@@ -123,8 +124,8 @@ function rehypePlugins(
         rehypeScrollable,
     ];
     return flavor === "gitlab"
-        ? [...rich, [rehypeToc, { label: labels.toc }], ...highlight]
-        : [...rich, ...highlight];
+        ? [...rich, [rehypeToc, { label: labels.toc }], ...highlight, rehypeLines]
+        : [...rich, ...highlight, rehypeLines];
 }
 
 /**

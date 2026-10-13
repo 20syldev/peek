@@ -37,15 +37,25 @@ interface Pending {
     retried: boolean;
 }
 
+interface Queued {
+    content: string;
+    options: RenderOptions;
+    resolve: (rendered: Rendered) => void;
+    reject: (error: Error) => void;
+}
+
 let worker: Worker | null = null;
 let ready = false;
 let pending: Pending | null = null;
+let queued: Queued | null = null;
 let nextId = 0;
 
 /**
- * Stops the worker and settles the pending render, if any. The next render
- * starts a fresh worker, which is the only way to interrupt a pathological
- * document since the pipeline is synchronous.
+ * Stops the worker and settles the pending render, if any. A fresh worker
+ * starts with the next render, which is the only way to interrupt a
+ * pathological document since the pipeline is synchronous. A request waiting
+ * behind the stopped render then runs on it, unless the stop is an abort,
+ * which drops that request too.
  *
  * @param error - Rejection given to the pending render
  */
@@ -57,6 +67,12 @@ function reset(error: Error) {
     window.clearTimeout(pending.timer);
     pending.reject(error);
     pending = null;
+    if (error instanceof RenderAborted) {
+        queued?.reject(error);
+        queued = null;
+    } else {
+        runQueued();
+    }
 }
 
 /**
@@ -91,6 +107,7 @@ function onMessage(event: MessageEvent<RenderResponse>) {
     if (rendered) pending.resolve(rendered);
     else pending.reject(new RenderFailed());
     pending = null;
+    runQueued();
 }
 
 /**
@@ -129,16 +146,14 @@ export function warmUpWorker() {
 }
 
 /**
- * Renders Markdown off the main thread, so a heavy or hostile document never
- * freezes the page. Only the latest request matters: a new one cancels the
- * previous render, and one that exceeds the time limit kills the worker.
+ * Sends a request to the worker, starting it when needed, and counts down
+ * its time limit.
  *
  * @param content - Markdown source, untrusted
  * @param options - Flavor and remote source, as for renderMarkdown
  * @returns The rendered tree; rejects with RenderAborted, RenderTimeout or RenderFailed
  */
-export function renderInWorker(content: string, options: RenderOptions): Promise<Rendered> {
-    if (pending) reset(new RenderAborted());
+function start(content: string, options: RenderOptions): Promise<Rendered> {
     const current = worker ?? spawn();
     worker = current;
 
@@ -149,5 +164,42 @@ export function renderInWorker(content: string, options: RenderOptions): Promise
         pending = render;
         arm(render, ready ? RENDER_TIMEOUT_MS : STARTUP_TIMEOUT_MS);
         current.postMessage(request);
+    });
+}
+
+/**
+ * Starts the request that waited for the running render, once it is over.
+ */
+function runQueued() {
+    if (!queued || pending) return;
+    const next = queued;
+    queued = null;
+    start(next.content, next.options).then(next.resolve, next.reject);
+}
+
+/**
+ * Renders Markdown off the main thread, so a heavy or hostile document never
+ * freezes the page. Only the latest request matters: by default a new one
+ * cancels the previous render, and one that exceeds the time limit kills the
+ * worker. A request that does not interrupt, such as a keystroke in the
+ * editor, waits for the running render instead, so typing never restarts the
+ * worker; only the latest waiting request is kept.
+ *
+ * @param content - Markdown source, untrusted
+ * @param options - Flavor and remote source, as for renderMarkdown
+ * @param mode - Options of the request; `interrupt: false` waits for the running render
+ * @returns The rendered tree; rejects with RenderAborted, RenderTimeout or RenderFailed
+ */
+export function renderInWorker(
+    content: string,
+    options: RenderOptions,
+    { interrupt = true }: { interrupt?: boolean } = {},
+): Promise<Rendered> {
+    if (pending && interrupt) reset(new RenderAborted());
+    if (!pending) return start(content, options);
+
+    return new Promise<Rendered>((resolve, reject) => {
+        queued?.reject(new RenderAborted());
+        queued = { content, options, resolve, reject };
     });
 }
