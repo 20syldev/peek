@@ -92,7 +92,20 @@
         "unsupported": "This document cannot be displayed in this format. Try another one.",
         "empty": "This document is empty.",
         "raw": "Raw Markdown",
-        "rawLabel": "Markdown source"
+        "rawLabel": "Markdown source",
+        "edit": "Edit",
+        "editing": "Editing",
+        "preview": "Preview",
+        "editorLabel": "Markdown editor",
+        "save": "Save",
+        "download": "Download",
+        "saved": "Saved",
+        "saveFailed": "Could not save",
+        "unsaved": "Unsaved changes",
+        "draftTitle": "A draft was kept",
+        "draftHint": "You had unsaved changes to this document the last time.",
+        "draftResume": "Resume the draft",
+        "draftDrop": "Start from the original"
     },
     "flavors": {
         "github": "Alerts, formulas, Mermaid, emojis",
@@ -139,7 +152,9 @@
             "copyLink": "Copy the share link",
             "close": "Close the document",
             "print": "Print or export to PDF",
-            "raw": "Show the raw Markdown"
+            "raw": "Show the raw Markdown",
+            "edit": "Edit the document",
+            "save": "Save the document"
         }
     }
 }

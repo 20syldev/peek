@@ -92,7 +92,20 @@
         "unsupported": "Ce document ne peut pas être affiché dans ce format. Essayez-en un autre.",
         "empty": "Ce document est vide.",
         "raw": "Markdown brut",
-        "rawLabel": "Source Markdown"
+        "rawLabel": "Source Markdown",
+        "edit": "Modifier",
+        "editing": "Modification",
+        "preview": "Aperçu",
+        "editorLabel": "Éditeur Markdown",
+        "save": "Enregistrer",
+        "download": "Télécharger",
+        "saved": "Enregistré",
+        "saveFailed": "Enregistrement impossible",
+        "unsaved": "Modifications non enregistrées",
+        "draftTitle": "Un brouillon a été conservé",
+        "draftHint": "Vous aviez des modifications non enregistrées sur ce document.",
+        "draftResume": "Reprendre le brouillon",
+        "draftDrop": "Repartir de l'original"
     },
     "flavors": {
         "github": "Alertes, formules, Mermaid, emojis",
@@ -139,7 +152,9 @@
             "copyLink": "Copier le lien de partage",
             "close": "Fermer le document",
             "print": "Imprimer ou exporter en PDF",
-            "raw": "Afficher le Markdown brut"
+            "raw": "Afficher le Markdown brut",
+            "edit": "Modifier le document",
+            "save": "Enregistrer le document"
         }
     }
 }
