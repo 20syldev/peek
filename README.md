@@ -13,6 +13,8 @@ Markdown viewer that shows any README, from a local file, a link or pasted text,
     - Obsidian: callouts with title and folding, `==highlight==`, wiki links, `![[image]]` embeds, `#tags`, `%%comments%%`.
     - CommonMark: the standard alone.
 - Raw Markdown view next to the rendering (`R`).
+- Editor (`E`): the source on the left and a live preview on the right, scrolling together by source line, or an Edit / Preview switch on small screens. `Ctrl S` saves into the file you pick (File System Access API, Chromium) or downloads a `.md` copy, keeping its line breaks.
+- Unsaved edits are kept as a draft in this browser, offered again when the same document is opened, and dropped once saved in place.
 - Outline on the side with the current section, whose width adapts to long headings, and a `#` anchor on every heading.
 - Sanitized HTML on GitHub's allowed-elements list: no script, no style, no `javascript:` link.
 - Rendering in a Web Worker with an 8 second limit: a heavy or booby-trapped document never freezes the page.
@@ -56,6 +58,6 @@ src/lib/                  Source resolution, loading, navigation, metadata, Mark
 
 - Static export: no middleware, `localePrefix: "as-needed"`. English is served at `/`, French at `/fr/`; each locale is a distinct root layout sharing the `Shell` component. On `/`, a small inline script sends the visitor to the language saved by the switcher, or else the first supported browser language, keeping `?url=` and the hash. Share links always point to `/`, so each recipient gets their own language.
 - Adding a language: add its code to `src/i18n/routing.ts` and its file to `messages/`.
-- Keyboard shortcuts: `Ctrl /` (all shortcuts, also `Ctrl :` for AZERTY keyboards), `Ctrl O` (open), `Ctrl V` (paste), `Ctrl P` (print), `/` (link field), `S` (outline), `C` (copy share link), `R` (raw Markdown), `D` (theme), `L` (language), `Esc` (close).
+- Keyboard shortcuts: `Ctrl /` (all shortcuts, also `Ctrl :` for AZERTY keyboards), `Ctrl O` (open), `Ctrl V` (paste), `Ctrl P` (print), `/` (link field), `S` (outline), `C` (copy share link), `R` (raw Markdown), `E` (edit), `Ctrl S` (save, while editing), `D` (theme), `L` (language), `Esc` (close).
 - The rendering worker uses a Turbopack `resolveAlias` for `decode-named-character-reference`, so its DOM build is never bundled into the worker.
 - Version 1 was one HTML page, one stylesheet and one script. Next.js replaces three duplicated stylesheets with Tailwind tokens, hand-made DOM code with typed `.tsx`, and an unsanitized `innerHTML` with a unified pipeline that sanitizes first; the static export still fits GitHub Pages, at the cost of a build step.
