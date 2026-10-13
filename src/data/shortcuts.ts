@@ -5,6 +5,8 @@ export type ShortcutId =
     | "outline"
     | "copyLink"
     | "raw"
+    | "edit"
+    | "save"
     | "theme"
     | "locale"
     | "close"
@@ -54,6 +56,8 @@ export const SHORTCUTS: Shortcut[] = [
     { id: "outline", key: "s", scope: "document" },
     { id: "copyLink", key: "c", scope: "document" },
     { id: "raw", key: "r", scope: "document" },
+    { id: "edit", key: "e", scope: "document" },
+    { id: "save", key: "s", mod: true, scope: "document" },
     { id: "close", key: "Escape", scope: "document" },
     {
         id: "print",
